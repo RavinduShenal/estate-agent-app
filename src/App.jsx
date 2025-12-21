@@ -1,4 +1,5 @@
 import propertiesData from './data/properties.json';
+import PropertyCard from './components/PropertyCard';
 
 function App() {
   const properties = propertiesData.properties;
@@ -8,11 +9,7 @@ function App() {
       <h1>Estate Agent App</h1>
 
       {properties.map(property => (
-        <div key={property.id}>
-          <h2>{property.type}</h2>
-          <p>{property.location}</p>
-          <p>£{property.price}</p>
-        </div>
+        <PropertyCard key={property.id} property={property} />
       ))}
     </div>
   );
