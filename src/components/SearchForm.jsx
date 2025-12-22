@@ -28,62 +28,62 @@ function SearchForm({ onSearch }) {
     <form className="search-form" onSubmit={handleSubmit}>
         <h3>Search Prpoerties</h3>
         
-      <label>
-        Property Type:
-        <select value={type} onChange={e => setType(e.target.value)}>
-          <option value="">Any</option>
-          <option value="House">House</option>
-          <option value="Flat">Flat</option>
-        </select>
-      </label>
+        <label>
+            Property Type:
+            <select value={type} onChange={e => setType(e.target.value)}>
+            <option value="">Any</option>
+            <option value="House">House</option>
+            <option value="Flat">Flat</option>
+            </select>
+        </label>
 
-      <br /><br />
+        <br /><br />
 
-      <label>
-        Min Price:
-        <input type="number" value={minPrice} onChange={e => setMinPrice(e.target.value)}/>
-      </label>
+        <label>
+            Min Price:
+            <input type="number" value={minPrice} onChange={e => setMinPrice(e.target.value)}/>
+        </label>
 
-      <br /><br />
+        <br /><br />
 
-      <label>
-        Max Price:
-        <input type="number" value={maxPrice} onChange={e => setMaxPrice(e.target.value)}/>
-      </label>
+        <label>
+            Max Price:
+            <input type="number" value={maxPrice} onChange={e => setMaxPrice(e.target.value)}/>
+        </label>
 
-      <br /><br />
+        <br /><br />
 
-      <label>
-        Min Bedrooms:
-        <input type="number" value={minBedrooms} onChange={e => setMinBedrooms(e.target.value)} />
-      </label>
+        <label>
+            Min Bedrooms:
+            <input type="number" value={minBedrooms} onChange={e => setMinBedrooms(e.target.value)} />
+        </label>
 
-      <br /><br />
+        <br /><br />
 
-      <label>
-        Max Bedrooms:
-        <input type="number" value={maxBedrooms} onChange={e => setMaxBedrooms(e.target.value)} />
-      </label>
+        <label>
+            Max Bedrooms:
+            <input type="number" value={maxBedrooms} onChange={e => setMaxBedrooms(e.target.value)} />
+        </label>
 
-      <br /><br />
+        <br /><br />
 
-      <label>
-        Postcode Area:
-        <input value={postcode} onChange={e => setPostcode(e.target.value.toUpperCase())} />
-      </label>
+        <label>
+            Postcode Area:
+            <input value={postcode} onChange={e => setPostcode(e.target.value.toUpperCase())} />
+        </label>
 
-      <br /><br />
+        <br /><br />
 
-      <label>
-        Added After:
-        <input type="date" value={dateFrom} onChange={e => setDateFrom(e.target.value)} />
-      </label>
+        <label>
+            Added After:
+            <input type="date" value={dateFrom} onChange={e => setDateFrom(e.target.value)} />
+        </label>
 
-      <br /><br />
+        <br /><br />
 
-      <button type="submit">Search</button>
-    </form>
-  );
+        <button type="submit">Search</button>
+        </form>
+    );
 }
 
 export default SearchForm;
