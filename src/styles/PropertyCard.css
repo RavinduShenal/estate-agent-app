@@ -1,0 +1,24 @@
+.property-card {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.property-card img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.property-info h3 {
+  margin: 0 0 5px 0;
+}
+
+.property-info p {
+  margin: 4px 0;
+}

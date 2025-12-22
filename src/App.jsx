@@ -2,6 +2,7 @@ import {useState} from "react";
 import propertiesData from './data/properties.json';
 import PropertyCard from './components/PropertyCard';
 import SearchForm from './components/SearchForm';
+import "./styles/App.css";
 
 function App() {
   const allProperties = propertiesData.properties;
@@ -50,7 +51,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="app-container">
       <h1>Estate Agent App</h1>
 
       <SearchForm onSearch={handleSearch}/>
