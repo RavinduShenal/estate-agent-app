@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/SearchForm.css";
 
 function SearchForm({ onSearch }) {
   const [type, setType] = useState("");
@@ -24,7 +25,7 @@ function SearchForm({ onSearch }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="search-form" onSubmit={handleSubmit}>
         <h3>Search Prpoerties</h3>
         
       <label>
