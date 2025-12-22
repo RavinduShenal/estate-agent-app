@@ -15,7 +15,15 @@
                 "month":"October",
                 "day":12,
                 "year":2022
-            }
+            },
+            "pictures": [
+                "/images/prop1_1.jpg",
+                "/images/prop1_2.jpg",
+                "/images/prop1_3.jpg",
+                "/images/prop1_4.jpg",
+                "/images/prop1_5.jpg",
+                "/images/prop1_6.jpg"
+            ]
         },
 		{
             "id":"prop2",
@@ -32,6 +40,14 @@
                 "month":"September",
                 "day":14,
                 "year":2022
-            }
+            },
+            "pictures": [
+                "/images/prop2_1.jpg",
+                "/images/prop2_2.jpg",
+                "/images/prop2_3.jpg",
+                "/images/prop2_4.jpg",
+                "/images/prop2_5.jpg",
+                "/images/prop2_6.jpg"
+            ]
         }
 ]}

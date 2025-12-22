@@ -22,3 +22,9 @@
 .property-info p {
   margin: 4px 0;
 }
+
+.property-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

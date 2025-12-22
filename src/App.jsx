@@ -2,6 +2,8 @@ import {useState} from "react";
 import propertiesData from './data/properties.json';
 import PropertyCard from './components/PropertyCard';
 import SearchForm from './components/SearchForm';
+import { Routes, Route } from "react-router-dom";
+import PropertyDetails from "./components/PropertyDetails";
 import "./styles/App.css";
 
 function App() {
@@ -51,15 +53,27 @@ function App() {
   }
 
   return (
-    <div className="app-container">
-      <h1>Estate Agent App</h1>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div className="app-container">
+            <h1>Estate Agent App</h1>
 
-      <SearchForm onSearch={handleSearch}/>
+            <SearchForm onSearch={handleSearch} />
 
-      {filteredProperties.map(property => (
-        <PropertyCard key={property.id} property={property} />
-      ))}
-    </div>
+            {filteredProperties.map(property => (
+              <PropertyCard key={property.id} property={property} />
+            ))}
+          </div>
+        }
+      />
+
+      <Route
+        path="/property/:id"
+        element={<PropertyDetails properties={allProperties} />}
+      />
+    </Routes>
   );
 }
 
