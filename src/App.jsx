@@ -9,6 +9,7 @@ function App() {
 
   function handleSearch(criteria) {
     const results = allProperties.filter(property => {
+
       if (criteria.type && property.type !== criteria.type) {
         return false;
       }
@@ -19,6 +20,27 @@ function App() {
 
       if (criteria.maxPrice && property.price > criteria.maxPrice) {
         return false;
+      }
+
+      if (criteria.minBedrooms && property.bedrooms < criteria.minBedrooms) {
+        return false;
+      }
+
+      if (criteria.maxBedrooms && property.bedrooms > criteria.maxBedrooms) {
+        return false;
+      }
+
+      if (criteria.postcode && !property.postcode.startsWith(criteria.postcode)) {
+        return false;
+      }
+
+      if (criteria.dateFrom) {
+        const propertyDate = new Date(property.added);
+        const selectedDate = new Date(criteria.dateFrom);
+
+        if (propertyDate < selectedDate) {
+          return false;
+        }
       }
 
       return true;
