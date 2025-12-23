@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import propertiesData from './data/properties.json';
 import PropertyCard from './components/PropertyCard';
 import SearchForm from './components/SearchForm';
@@ -9,6 +9,23 @@ import "./styles/App.css";
 function App() {
   const allProperties = propertiesData.properties;
   const [filteredProperties, setFilteredProperties] = useState(allProperties);
+
+  const [favourites, setFavourites] = useState(() => {
+    const stored = localStorage.getItem("favourites");
+    return stored ? JSON.parse(stored) : [];
+  });
+
+useEffect(() => {
+  localStorage.setItem("favourites", JSON.stringify(favourites));
+}, [favourites]);
+
+const toggleFavourite = (id) => {
+  setFavourites(prev =>
+    prev.includes(id)
+      ? prev.filter(fav => fav !== id)
+      : [...prev, id]
+  );
+};
 
   function handleSearch(criteria) {
     const results = allProperties.filter(property => {
@@ -63,7 +80,12 @@ function App() {
             <SearchForm onSearch={handleSearch} />
 
             {filteredProperties.map(property => (
-              <PropertyCard key={property.id} property={property} />
+              <PropertyCard
+                key={property.id}
+                property={property}
+                favourites={favourites}
+                toggleFavourite={toggleFavourite}
+              />
             ))}
           </div>
         }
@@ -71,7 +93,7 @@ function App() {
 
       <Route
         path="/property/:id"
-        element={<PropertyDetails properties={allProperties} />}
+        element={<PropertyDetails properties={allProperties} favourites={favourites} toggleFavourite={toggleFavourite}/>}
       />
     </Routes>
   );
