@@ -1,50 +1,123 @@
-.property-card {
-  display: flex;
-  gap: 15px;
-  padding: 15px;
+.details-page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.back-link {
+  display: inline-block;
   margin-bottom: 15px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  position: relative;
-}
-
-.property-card img {
-  width: 150px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.property-info h3 {
-  margin: 0 0 5px 0;
-}
-
-.property-info p {
-  margin: 4px 0;
-}
-
-.property-link {
+  color: #0077cc;
   text-decoration: none;
-  color: inherit;
-  display: block;
 }
 
-.fav-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 10;
-  background: white;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  font-size: 18px;
+.details-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+/* Images */
+.main-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  opacity: 0.6;
+  border: 2px solid transparent;
 }
 
-.fav-btn.active {
-  color: red;
+.thumbnail.active {
+  opacity: 1;
+  border-color: #0077cc;
+}
+
+/* Summary */
+.details-summary h2 {
+  margin: 0;
+}
+
+.price {
+  color: #0077cc;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.fav-save-btn {
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.fav-save-btn.saved {
+  color: green;
+  border-color: green;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.badges span {
+  background: #f1f1f1;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.added-date {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.tabs button {
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.tabs button.active {
+  border-bottom: 3px solid #0077cc;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.tab-content {
+  line-height: 1.6;
+}
+
+.map-frame {
+  width: 100%;
+  height: 300px;
+  border: none;
 }
