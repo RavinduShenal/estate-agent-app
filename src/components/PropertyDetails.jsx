@@ -5,47 +5,67 @@ import "../styles/PropertyDetails.css";
 function PropertyDetails({ properties, favourites, toggleFavourite }) {
   const { id } = useParams();
 
-  // 1️⃣ Find the property FIRST
   const property = properties.find(p => p.id === id);
 
-  // 2️⃣ Guard clause (very important)
   if (!property) {
     return <p>Property not found</p>;
   }
 
-  // 3️⃣ NOW it is safe to use property
+  const isFavourite = favourites.some(fav => fav.id === property.id);
   const [mainImage, setMainImage] = useState(property.pictures[0]);
   const [activeTab, setActiveTab] = useState("description");
 
   return (
-    <div className="details-container">
-      <Link to="/" className="back-link">← Back to search</Link>
+    <div className="details-page">
 
-      <h2>{property.type}</h2>
+      <Link to="/" className="back-link">← Back to Search</Link>
 
-      <button
-        className={`fav-btn ${favourites.includes(property.id) ? "active" : ""}`}
-        onClick={() => toggleFavourite(property.id)}
-      >
-        ❤️
-      </button>
+      {/* Top section */}
+      <div className="details-top">
 
-      <img
-        src={mainImage}
-        alt="Property"
-        className="details-main-image"
-      />
-
-      <div className="thumbnail-row">
-        {property.pictures.map((img, index) => (
+        {/* LEFT: Images */}
+        <div className="details-images">
           <img
-            key={index}
-            src={img}
-            alt={`Property ${index}`}
-            className={`thumbnail ${img === mainImage ? "active" : ""}`}
-            onClick={() => setMainImage(img)}
+            src={mainImage}
+            alt={property.type}
+            className="main-image"
           />
-        ))}
+
+          <div className="thumbnail-row">
+            {property.pictures.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`Thumbnail ${index}`}
+                className={`thumbnail ${img === mainImage ? "active" : ""}`}
+                onClick={() => setMainImage(img)}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* RIGHT: Summary */}
+        <div className="details-summary">
+          <h2>{property.location}</h2>
+          <p className="price">£{property.price.toLocaleString()}</p>
+
+          <button
+            className={`fav-save-btn ${isFavourite ? "saved" : ""}`}
+            onClick={() => toggleFavourite(property)}
+          >
+            {isFavourite ? "✓ Saved to Favourites" : "♡ Save to Favourites"}
+          </button>
+
+          <div className="badges">
+            <span>{property.type}</span>
+            <span>{property.bedrooms} Bedrooms</span>
+            <span>{property.tenure}</span>
+          </div>
+
+          <p className="added-date">
+            Added: {property.added.month} {property.added.day}, {property.added.year}
+          </p>
+        </div>
       </div>
 
       {/* Tabs */}
@@ -68,21 +88,20 @@ function PropertyDetails({ properties, favourites, toggleFavourite }) {
           className={activeTab === "map" ? "active" : ""}
           onClick={() => setActiveTab("map")}
         >
-          Map
+          Google Map
         </button>
       </div>
 
+      {/* Tab Content */}
       <div className="tab-content">
         {activeTab === "description" && (
           <p>{property.description}</p>
         )}
 
         {activeTab === "floorplan" && (
-          <img
-            src={`/images/${property.id}_floorplan.jpg`}
-            alt="Floor plan"
-            className="floorplan-image"
-          />
+            property.id
+                ? <img src={`/images/${property.id}_floorplan.jpg`} alt="Floor plan" />
+                : <p><em>Floor plan not available</em></p>
         )}
 
         {activeTab === "map" && (
@@ -93,6 +112,7 @@ function PropertyDetails({ properties, favourites, toggleFavourite }) {
           ></iframe>
         )}
       </div>
+
     </div>
   );
 }
