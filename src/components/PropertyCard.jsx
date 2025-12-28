@@ -2,10 +2,25 @@ import { Link } from "react-router-dom";
 import "../styles/PropertyCard.css";
 
 function PropertyCard({ property, favourites, toggleFavourite }) {
+
   const isFavourite = favourites.includes(property.id);
 
   return (
     <div className="property-card">
+
+      <button
+        type="button"
+        className={`fav-btn ${isFavourite ? "active" : ""}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          toggleFavourite(property.id);
+        }}
+      >
+        ♥
+      </button>
+
+      {/* Clickable card content */}
       <Link to={`/property/${property.id}`} className="property-link">
         <img src={property.picture} alt={property.type} />
 
@@ -16,12 +31,6 @@ function PropertyCard({ property, favourites, toggleFavourite }) {
         </div>
       </Link>
 
-      <button
-        className={`fav-btn ${isFavourite ? "active" : ""}`}
-        onClick={() => toggleFavourite(property.id)}
-      >
-        ❤️
-      </button>
     </div>
   );
 }

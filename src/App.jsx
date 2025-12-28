@@ -19,12 +19,14 @@ useEffect(() => {
   localStorage.setItem("favourites", JSON.stringify(favourites));
 }, [favourites]);
 
-const toggleFavourite = (id) => {
-  setFavourites(prev =>
-    prev.includes(id)
-      ? prev.filter(fav => fav !== id)
-      : [...prev, id]
-  );
+const toggleFavourite = (property) => {
+  const exists = favourites.some(fav => fav.id === property.id);
+
+  if (exists) {
+    setFavourites(favourites.filter(fav => fav.id !== property.id));
+  } else {
+    setFavourites([...favourites, property]);
+  }
 };
 
   function handleSearch(criteria) {
@@ -55,7 +57,10 @@ const toggleFavourite = (id) => {
       }
 
       if (criteria.dateFrom) {
-        const propertyDate = new Date(property.added);
+        const propertyDate = new Date(
+          `${property.added.month} ${property.added.day}, ${property.added.year}`
+        );
+
         const selectedDate = new Date(criteria.dateFrom);
 
         if (propertyDate < selectedDate) {
@@ -74,19 +79,30 @@ const toggleFavourite = (id) => {
       <Route
         path="/"
         element={
-          <div className="app-container">
-            <h1>Estate Agent App</h1>
+          <div className="page">
+            <header className="header">
+              <div className="header-content">
+                <h1>Estate Agent App</h1>
+                <p>Find your next home with ease</p>
+              </div>
+            </header>
 
-            <SearchForm onSearch={handleSearch} />
+            <main className="content">
+              <section className="search-section">
+                <SearchForm onSearch={handleSearch} />
+              </section>
 
-            {filteredProperties.map(property => (
-              <PropertyCard
-                key={property.id}
-                property={property}
-                favourites={favourites}
-                toggleFavourite={toggleFavourite}
-              />
-            ))}
+              <section className="results-section">
+                {filteredProperties.map(property => (
+                  <PropertyCard
+                    key={property.id}
+                    property={property}
+                    favourites={favourites}
+                    toggleFavourite={toggleFavourite}
+                  />
+                ))}
+              </section>
+            </main>
           </div>
         }
       />
