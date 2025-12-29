@@ -13,35 +13,25 @@ function PropertyCard({ property, favourites, addFavourite }) {
       }
     >
       <Link to={`/property/${property.id}`} className="property-link">
-        <img src={property.picture} alt={property.type} />
+        <div className="image-wrapper">
+            <img src={property.picture} alt={property.type} />
+        </div>
 
         <div className="property-info">
           <h3>{property.type}</h3>
-          <p>{property.location}</p>
-          <p>£{property.price.toLocaleString()}</p>
+          <p className="location">{property.location}</p>
+          <p className="price">£{property.price.toLocaleString()}</p>
         </div>
       </Link>
 
       <button
         type="button"
-        className="fav-btn"
+        className={`fav-btn ${isFavourite ? "active" : ""}`}
         disabled={isFavourite}
         onClick={() => addFavourite(property.id)}
       >
-        {isFavourite ? "Favourited" : "Add to Favourites"}
+        {isFavourite ? "♥" : "♡"}
       </button>
-
-      {/* NEW: Heart Button */}
-        <button 
-          className={`fav-heart-btn ${isFavourite ? 'active' : ''}`}
-          onClick={(e) => {
-            e.preventDefault(); // Stop clicking the card link
-            onToggleFav(property);
-          }}
-          title={isFavourite ? "Remove from favourites" : "Add to favourites"}
-        >
-          {isFavourite ? '♥' : '♡'}
-        </button>
     </div>
   );
 }
