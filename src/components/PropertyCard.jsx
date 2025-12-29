@@ -30,6 +30,18 @@ function PropertyCard({ property, favourites, addFavourite }) {
       >
         {isFavourite ? "Favourited" : "Add to Favourites"}
       </button>
+
+      {/* NEW: Heart Button */}
+        <button 
+          className={`fav-heart-btn ${isFavourite ? 'active' : ''}`}
+          onClick={(e) => {
+            e.preventDefault(); // Stop clicking the card link
+            onToggleFav(property);
+          }}
+          title={isFavourite ? "Remove from favourites" : "Add to favourites"}
+        >
+          {isFavourite ? '♥' : '♡'}
+        </button>
     </div>
   );
 }

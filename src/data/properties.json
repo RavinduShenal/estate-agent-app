@@ -17,6 +17,7 @@
                 "year":2022
             },
             "pictures": [
+                "/images/prop1.jpg",
                 "/images/prop1_1.jpg",
                 "/images/prop1_2.jpg",
                 "/images/prop1_3.jpg",
@@ -42,12 +43,142 @@
                 "year":2022
             },
             "pictures": [
+                "/images/prop2.jpg",
                 "/images/prop2_1.jpg",
                 "/images/prop2_2.jpg",
                 "/images/prop2_3.jpg",
                 "/images/prop2_4.jpg",
                 "/images/prop2_5.jpg",
                 "/images/prop2_6.jpg"
+            ]
+        },
+        {
+            "id":"prop3",
+			"type":"House",
+            "bedrooms":7,
+			"price":16500000,
+			"tenure":"Freehold",
+			"description":"Discover an exceptional, Grade II Listed, seven bedroom family home, beautifully reimagined for modern living while retaining its timeless heritage. Originally built by the esteemed C.H.B. Quennell, this magnificent property sits behind a gated carriage driveway with a garage, exuding elegance and grandeur. This impeccably restored family home blends exquisite period details—such as restored fireplaces and high ceilings with contemporary comforts, offering spacious, light-filled rooms and a seamless turnkey opportunity. The manicured 115 foot south-facing garden is designed for both relaxation and entertaining, featuring an alfresco dining area, outdoor fireplace, and a charming garden studio.",
+			"location":"Heath Drive, Hampstead, NW3",
+			"picture":"/images/prop3.jpg",
+            "postcode":"NW3",
+			"url":"properties/prop3.html",
+            "added": {
+                "month":"Frbruary",
+                "day":5,
+                "year":2023
+            },
+            "pictures": [
+                "/images/prop3.jpg",
+                "/images/prop3_1.jpg",
+                "/images/prop3_2.jpg",
+                "/images/prop3_3.jpg",
+                "/images/prop3_4.jpg",
+                "/images/prop3_5.jpg",
+                "/images/prop3_6.jpg"
+            ]
+        },
+        {
+            "id":"prop4",
+			"type":"Detached",
+            "bedrooms":5,
+			"price":2850000,
+			"tenure":"Freehold",
+			"description":"This fabulous 5 bedroom detached house offers beautifully refurbished and fantastically spacious accommodation including a stunning open plan kitchen, landscaped private garden and gated off street parking. Rowdon Avenue is a quiet residential area near the shops, bars and restaurants of Willesden Green with Queen's Park and Kensal Rise also close by. Willesden Green Underground Station (Jubilee Line) is close by for links throughout the city and West End.",
+			"location":"Rowdon Avenue, Willesden, London, NW10",
+			"picture":"/images/prop4.jpg",
+            "postcode":"NW10",
+			"url":"properties/prop4.html",
+            "added": {
+                "month":"November",
+                "day":25,
+                "year":2025
+            },
+            "pictures": [
+                "/images/prop4.jpg",
+                "/images/prop4_1.jpg",
+                "/images/prop4_2.jpg",
+                "/images/prop4_3.jpg",
+                "/images/prop4_4.jpg",
+                "/images/prop4_5.jpg",
+                "/images/prop4_6.jpg"
+            ]
+        },
+        {
+            "id":"prop5",
+			"type":"Country House",
+            "bedrooms":5,
+			"price":3000000,
+			"tenure":"Freehold",
+			"description":"A home so astonishingly beautiful it feels ripped from a dream, where panoramic, magazine-worthy vistas command your gaze and refuse to let go. Come with me to one of Glan Conwy’s most remarkable hidden sanctuaries.... a place where world-class views meet exquisite design, where luxury living blends effortlessly with tranquillity, and where every sunrise feels like a privilege. This is far more than a home… it’s a lifestyle, a retreat, and a rare opportunity to own a breath-taking estate with huge potential. Set discreetly behind private electric gates, this exceptional residence unveils a world of exclusivity. Manicured grounds unfold in a series of beautifully curated spaces, quiet corners to breathe, sweeping lawns to wander, and views so mesmerising they feel almost cinematic. Every inch of the landscape has been shaped to protect the peace, privacy and magic of this extraordinary setting.",
+			"location":"Piper's Hill, Glan Conwy, LL28",
+			"picture":"/images/prop5.jpg",
+            "postcode":"LL28",
+			"url":"properties/prop5.html",
+            "added": {
+                "month":"December",
+                "day":3,
+                "year":2025
+            },
+            "pictures": [
+                "/images/prop5_1.jpg",
+                "/images/prop5_2.jpg",
+                "/images/prop5_3.jpg",
+                "/images/prop5_4.jpg",
+                "/images/prop5_5.jpg",
+                "/images/prop5_6.jpg"
+            ]
+        },
+        {
+            "id":"prop6",
+			"type":"House",
+            "bedrooms":6,
+			"price":47000000,
+			"tenure":"Freehold",
+			"description":"This beautiful six-bedroom house lies in the coveted Chelsea Barracks development. Thoughtfully designed, the house is in a historic location yet utterly modern and chic. Inspired by the Georgian townhouses that line the streets of Chelsea, this house has elegant finishes and grand proportions. Set on Whistler Square overlooking a contemporary water feature and blossom-laden trees, it is exceptionally tranquil yet in the heart of London. Arranged across a vast 13,067 sq. ft and six floors, the house has formal and informal reception rooms, perfect for entertaining on a grand scale and nights in with the family alike. These rooms are 30ft wide, compared to the traditional 19 ft. Wooden parquet flooring seamlessly complements the natural stone entrance hall, setting the stage for an impressive Halstock kitchen, featuring integrated appliances from Sub-Zero and Wolf.",
+			"location":"Whistler Square, Chelsea Barracks, London, SW1W, United Kingdomn",
+			"picture":"/images/prop6.jpg",
+            "postcode":"SW1W",
+			"url":"properties/prop6.html",
+            "added": {
+                "month":"September",
+                "day":9,
+                "year":2024
+            },
+            "pictures": [
+                "/images/prop6.jpg",
+                "/images/prop6_1.jpg",
+                "/images/prop6_2.jpg",
+                "/images/prop6_3.jpg",
+                "/images/prop6_4.jpg",
+                "/images/prop6_5.jpg",
+                "/images/prop6_6.jpg"
+            ]
+        },
+        {
+            "id":"prop7",
+			"type":"Flat",
+            "bedrooms":3,
+			"price":990000,
+			"tenure":"Leasehold",
+			"description":"Sleek and stylish and energy efficient, this modern, first floor, 3-bedroom apartment is set in an exclusive, private development (built in c.2020) in a sought-after prestigious location. A secure communal entrance opens to a hallway with apartment access via stairs or a lift. Inside, oak wooden flooring stretches along the apartment's hallway and into the principal living space. Zoned underfloor heating is throughout, with sleek lighting and modern fixtures and fittings, particularly Gröhe® and Duravit®, bespoke automated and time-programmable Luxaflex® Powerview electric blinds, heated bathroom mirrors and heated towel rail. The main living space is open plan, with a well-equipped kitchen: Leich® units, granite worktops, an island unit with breakfast bar, integrated Miele® ovens, Caple integrated wine fridge, dishwasher, and separate fridge & freezer.",
+			"location":"Lansdown Road, Bath, Somerset, BA1",
+			"picture":"/images/prop7.jpg",
+            "postcode":"BA1",
+			"url":"properties/prop7.html",
+            "added": {
+                "month":"July",
+                "day":5,
+                "year":2025
+            },
+            "pictures": [
+                "/images/prop7.jpg",
+                "/images/prop7_1.jpg",
+                "/images/prop7_2.jpg",
+                "/images/prop7_3.jpg",
+                "/images/prop7_4.jpg",
+                "/images/prop7_5.jpg",
+                "/images/prop7_6.jpg"
             ]
         }
 ]}
