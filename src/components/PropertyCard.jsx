@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/PropertyCard.css";
 
-function PropertyCard({ property, favourites, addFavourite }) {
+function PropertyCard({ property, favourites, addFavourite, removeFavourite }) {
   const isFavourite = favourites.includes(property.id);
 
   return (
@@ -27,8 +27,16 @@ function PropertyCard({ property, favourites, addFavourite }) {
       <button
         type="button"
         className={`fav-btn ${isFavourite ? "active" : ""}`}
-        disabled={isFavourite}
-        onClick={() => addFavourite(property.id)}
+        onClick={(e) =>{
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (isFavourite) {
+            removeFavourite(property.id);
+            } else {
+            addFavourite(property.id);
+            }
+        }}
       >
         {isFavourite ? "♥" : "♡"}
       </button>

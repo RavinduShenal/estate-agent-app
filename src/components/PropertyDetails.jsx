@@ -4,14 +4,14 @@ import "../styles/PropertyDetails.css";
 
 function PropertyDetails({ properties, favourites, toggleFavourite }) {
   const { id } = useParams();
-
+  
   const property = properties.find(p => p.id === id);
 
   if (!property) {
     return <p>Property not found</p>;
   }
 
-  const isFavourite = favourites.some(fav => fav.id === property.id);
+  const isFavourite = favourites.includes(property.id);
   const [mainImage, setMainImage] = useState(property.pictures[0]);
   const [activeTab, setActiveTab] = useState("description");
 
@@ -50,10 +50,19 @@ function PropertyDetails({ properties, favourites, toggleFavourite }) {
           <p className="price">£{property.price.toLocaleString()}</p>
 
           <button
-            className={`fav-save-btn ${isFavourite ? "saved" : ""}`}
-            onClick={() => toggleFavourite(property)}
+            type="button"
+            className={`fav-btn ${isFavourite ? "active" : ""}`}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              if (isFavourite) {
+                removeFavourite(property.id);
+              } else {
+                addFavourite(property.id);
+              }
+            }}
           >
-            {isFavourite ? "✓ Saved to Favourites" : "♡ Save to Favourites"}
+            {isFavourite ? "♥" : "♡"}
           </button>
 
           <div className="badges">

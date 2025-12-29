@@ -87,6 +87,7 @@ function App() {
                       property={property}
                       favourites={favourites}
                       addFavourite={addFavourite}
+                      removeFavourite={removeFavourite}
                     />
                   ))}
                 </section>
