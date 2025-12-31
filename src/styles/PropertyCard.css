@@ -6,6 +6,18 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* Remove default link styling from property card */
+.property-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Ensure hover doesn't reintroduce underline */
+.property-link:hover {
+  text-decoration: none;
+}
+
 /* Images */
 .image-wrapper img {
   width: 100%;

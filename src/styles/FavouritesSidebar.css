@@ -63,6 +63,18 @@
   margin-bottom: 6px;
 }
 
+.favourite-item {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  gap: 12px;
+}
+
+.favourite-item:hover {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+
 .remove-btn {
   background: #eee;
   border: none;
