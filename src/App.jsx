@@ -12,7 +12,7 @@ function App() {
 
   const [filteredProperties, setFilteredProperties] = useState(allProperties);
 
-  // ✅ FAVOURITES STORED AS PROPERTY IDs (CW requirement)
+  // ✅ FAVOURITES STORED AS PROPERTY IDs
   const [favourites, setFavourites] = useState(() => {
     const stored = localStorage.getItem("favourites");
     return stored ? JSON.parse(stored) : [];
@@ -37,7 +37,7 @@ function App() {
     setFavourites([]);
   };
 
-  // ✅ SEARCH LOGIC (UNCHANGED)
+  // ✅ SEARCH LOGIC
   function handleSearch(criteria) {
     const results = allProperties.filter(property => {
       if (criteria.type && property.type !== criteria.type) return false;
