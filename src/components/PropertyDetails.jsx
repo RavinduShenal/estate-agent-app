@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import "../styles/PropertyDetails.css";
 
-function PropertyDetails({ properties, favourites, toggleFavourite }) {
+function PropertyDetails({ properties, favourites, addFavourite, removeFavourite }) {
   const { id } = useParams();
   
   const property = properties.find(p => p.id === id);
