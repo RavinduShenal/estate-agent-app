@@ -1,5 +1,6 @@
 .favourites-sidebar {
-  width: 280px;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 16px;
   border-left: 1px solid #ccc;
   background: #f9f9f9;
@@ -102,4 +103,13 @@
 }
 .clear-btn:hover {
   background: #005fa3;
+}
+
+@media (max-width: 1024px) {
+  .favourites-sidebar {
+    width: 100%;
+    position: relative;
+    top: auto;
+    margin-top: 20px;
+  }
 }
