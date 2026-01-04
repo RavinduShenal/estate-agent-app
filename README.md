@@ -5,11 +5,14 @@ The application allows users to search for properties, view property details, an
 
 ---
 
+*🚀 Live Demo:* [View Deployed Application](https://dream-homes-site.netlify.app/)
+
+
 ## 📌 Features
 
 - 🔍 **Property Search**
   - Filter properties by:
-    - Property type (House / Flat)
+    - Property type (Any / House / Flat)
     - Price range
     - Number of bedrooms
     - Postcode area
@@ -51,7 +54,6 @@ The application allows users to search for properties, view property details, an
 - **JavaScript (ES6+)**
 - **HTML5**
 - **CSS3** (Component-based styling)
-- **Local Storage API**
 - **JSON** (Property data source)
 
 ---
@@ -80,14 +82,25 @@ src/
 ├── main.jsx
 └── index.css
 
-## ▶️ How to Run the Project
+## Installation & Setup
 
-1. Clone the repository or extract the project files
-2. Open a terminal in the project directory
-3. Install dependencies:
-   ```bash
-   npm install
-4. Start the development server:
+1.  *Clone the repository*
+    bash
+    git clone https://github.com/RavinduShenal/estate-agent-app.git
+    cd estate-agent-app
+    
+
+2.  *Install dependencies*
+    bash
+    npm install
+    
+
+3.  *Start the app*
+    bash
     npm run dev
-5. Open the provided local URL in your browser
+    
+
+4.  *Run tests*
+    bash
+    npm run test
 
