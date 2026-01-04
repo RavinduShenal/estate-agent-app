@@ -3,27 +3,32 @@ import { useState } from "react";
 import "../styles/PropertyDetails.css";
 
 function PropertyDetails({ properties, favourites, addFavourite, removeFavourite }) {
+
+  // Get the property ID from the URL
   const { id } = useParams();
   
+  // Find the selected property using the ID
   const property = properties.find(p => p.id === id);
 
+  // Show message if property is not found
   if (!property) {
     return <p>Property not found</p>;
   }
 
-  const isFavourite = favourites.includes(property.id);
-  const [mainImage, setMainImage] = useState(property.pictures[0]);
-  const [activeTab, setActiveTab] = useState("description");
-
+  const isFavourite = favourites.includes(property.id);                // Check if property is in favourites
+  const [mainImage, setMainImage] = useState(property.pictures[0]);    // State for main image display
+  const [activeTab, setActiveTab] = useState("description");           // State for active tab
+ 
   return (
     <div className="details-page">
 
+      {/* Back to search page */}
       <Link to="/" className="back-link">← Back to Search</Link>
 
       {/* Top section */}
       <div className="details-top">
 
-        {/* LEFT: Images */}
+        {/* Left side : Images */}
         <div className="details-images">
           <img
             src={mainImage}
@@ -44,11 +49,12 @@ function PropertyDetails({ properties, favourites, addFavourite, removeFavourite
           </div>
         </div>
 
-        {/* RIGHT: Summary */}
+        {/* Right side : Summary */}
         <div className="details-summary">
           <h2>{property.location}</h2>
           <p className="price">£{property.price.toLocaleString()}</p>
 
+          {/* Favourite button */}
           <button
             type="button"
             className={`fav-btn ${isFavourite ? "active" : ""}`}
@@ -65,12 +71,14 @@ function PropertyDetails({ properties, favourites, addFavourite, removeFavourite
             {isFavourite ? "♥" : "♡"}
           </button>
 
+          {/* Property details */}
           <div className="badges">
             <span>{property.type}</span>
             <span>{property.bedrooms} Bedrooms</span>
             <span>{property.tenure}</span>
           </div>
 
+          {/* Date added */}
           <p className="added-date">
             Added: {property.added.month} {property.added.day}, {property.added.year}
           </p>
