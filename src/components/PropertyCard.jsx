@@ -15,6 +15,7 @@ function PropertyCard({ property, favourites, addFavourite, removeFavourite }) {
 
       {/* Clicking the card opens property details */}
       <Link to={`/property/${property.id}`} className="property-link">
+      
         {/* Property image */}
         <div className="image-wrapper">
             <img src={property.picture} alt={property.type} />

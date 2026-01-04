@@ -79,7 +79,7 @@ function App() {
             {/* Header section */}
             <header className="header">
               <div className="header-content">
-                <h1>Estate Agent App</h1>
+                <h1>Dream Homes</h1>
                 <p>Where modern living meets seamless search. Find your dream home.</p>
               </div>
             </header>
