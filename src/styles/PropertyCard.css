@@ -21,7 +21,7 @@
 /* Images */
 .image-wrapper img {
   width: 100%;
-  height: auto;
+  height: 180px;
   display: block;
   object-fit: cover;
 }
