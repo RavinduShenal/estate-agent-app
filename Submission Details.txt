@@ -1,0 +1,6 @@
+Student Name: G P Ravindu Shenal Tharuka (Group 22)
+Project Name: Dream Homes - Estate Agent App
+
+LINKS
+GitHub Repository: https://github.com/RavinduShenal/estate-agent-app.git
+Live Deployed Site: https://dream-homes-site.netlify.app/
